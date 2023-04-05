@@ -9,7 +9,18 @@ function carregar(){
     var hora = data.getHours() 
     var minuto = data.getMinutes()
     var dv3 = td3
-    td1.innerHTML = `${hora}:${minuto}`
+
+    if(hora < 10 && minuto < 10){
+        td1.innerHTML = `0${hora}:0${minuto}`
+    }else if(hora < 10){
+        td1.innerHTML = `0${hora}:${minuto}`
+    }else if(minuto < 10){
+        td1.innerHTML = `${hora}:0${minuto}`
+    }else{
+        td1.innerHTML = `${hora}:${minuto}`
+}
+
+
 
     if(hora >= 6 && hora < 12){
         img.src = 'manha1.png'
